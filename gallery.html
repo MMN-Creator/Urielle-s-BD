@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - [Cousin’s Name]'s Birthday Celebration</title>
+  <style>
+    /* Basic Styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f8cadd;
+    }
+    h2 {
+      font-size: 2em;
+      color: #ff6680;
+      margin-bottom: 10px;
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-color: #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Modal (Hidden by Default) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding-top: 60px;
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #ff69b4;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 30px;
+    }
+    .nav-buttons a {
+      text-decoration: none;
+      color: #ff6680;
+      font-weight: bold;
+      border: 2px solid #ff99aa;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-buttons a:hover {
+      background-color: #ff99aa;
+      color: #fff;
+    }
+    /* Video player container */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container video {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Gallery - Memories of Urielle</h2>
+
+  <!-- Gallery Section -->
+  <div class="gallery-container">
+    <!-- Gallery Items (Images) -->
+    <div class="gallery-item" onclick="openModal('B14.JPG')">
+      <img src="B14.jpg" alt="Memory 1">
+    </div>
+    <div class="gallery-item" onclick="openModal('B20.JPG')">
+      <img src="B20.JPG" alt="Memory 2">
+    </div>
+    <div class="gallery-item" onclick="openModal('B43.jpg')">
+      <img src="B43.JPG" alt="Memory 3">
+    </div>
+    <div class="gallery-item" onclick="openModal('B62.jpeg')">
+      <img src="B62.jpeg" alt="Memory 4">
+    </div>
+    <div class="gallery-item" onclick="openModal('B28.JPG')">
+      <img src="B28.JPG" alt="Memory 5">
+    </div>
+    <div class="gallery-item" onclick="openModal('B16.jpg')">
+      <img src="B16.jpg" alt="Memory 6">
+    </div>
+    <div class="gallery-item" onclick="openModal('duh.JPG')">
+      <img src="duh.JPG" alt="Memory 7">
+    </div>
+    <div class="gallery-item" onclick="openModal('B4.JPG')">
+      <img src="B4.JPG" alt="Memory 8">
+    </div>
+    
+    <div class="gallery-item" onclick="openModal('B75.JPG')">
+      <img src="B75.JPG" alt="Memory 10">
+    </div>
+    
+    <div class="gallery-item" onclick="openModal('B53.JPG')">
+      <img src="B53.JPG" alt="Memory 12">
+    </div>
+    <div class="gallery-item" onclick="openModal('PIO.JPG')">
+      <img src="pio.JPG" alt="Memory 13">
+    </div>
+    
+    <div class="gallery-item" onclick="openModal('ac2df479-10a0-4fdf-87f9-858e1f5338ea.JPG')">
+      <img src="ac2df479-10a0-4fdf-87f9-858e1f5338ea.JPG" alt="Memory 15">
+    </div>
+    
+      <div class="gallery-item" onclick="openModal('B123.JPG')">
+        <img src="B123.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B104.JPG')">
+        <img src="B104.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('nwa.JPG')">
+        <img src="nwa.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B119.JPG')">
+        <img src="B119.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B131.JPG')">
+        <img src="B131.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B102.JPG')">
+        <img src="B102.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B130.JPG')">
+        <img src="B130.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('i36.JPG')">
+        <img src="I36.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B79.jpg')">
+        <img src="B79.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B132.jpeg')">
+        <img src="B132.jpeg" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B78.JPG')">
+        <img src="B78.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B69.JPG')">
+        <img src="B69.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B128.JPG')">
+        <img src="B128.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B97.JPG')">
+        <img src="B97.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B59.JPG')">
+        <img src="B59.JPG" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('B91.jpg')">
+        <img src="B91.jpg" alt="Memory 15">
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('c008a27c-606e-4db4-b436-ccc296f4c57c.JPG')">
+        <img src="c008a27c-606e-4db4-b436-ccc296f4c57c.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('e5e6cad0-3830-4236-a035-384e17b5a535.JPG')">
+        <img src="e5e6cad0-3830-4236-a035-384e17b5a535.JPG" alt="Memory 15">
+      </div>
+    
+      
+      <div class="gallery-item" onclick="openModal('B54.JPG')">
+        <img src="B54.JPG" alt="Memory 15">
+      </div>
+      <div class="gallery-item" onclick="openModal('B71.JPG')">
+        <img src="B71.JPG" alt="Memory 15">
+      </div>
+  </div>
+  <div class="video-container">
+    <video controls>
+      <source src="URIELLE.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <script>
+    // Placeholder JavaScript: Add custom functionality here if needed
+    // Example: Log a message when the video plays
+    const videoElement = document.querySelector("video");
+
+    videoElement.addEventListener("play", () => {
+      console.log("Video started playing!");
+    });
+  </script>
+  <!-- Modal (Hidden by Default) -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    // Function to open the modal and display the clicked image
+    function openModal(imageSrc) {
+      var modal = document.getElementById("myModal");
+      var modalImage = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImage.src = imageSrc;
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
+
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <a href="index.html">Back to Home</a>
+    <a href="hub.html">Back to Hub</a>
+  </div>
+
+</body>
+</html>

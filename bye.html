@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goodbye and Thank You!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #ff6680;
+      overflow: hidden;
+    }
+
+    .slide-container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: #ffccdd;
+      transition: transform 1s ease-in-out;
+      padding: 40px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .slide.active {
+      left: 0;
+    }
+
+    h1, h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #ff6680;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.5;
+      color: #7a304f;
+    }
+
+    /* Styling for Slide Buttons */
+  .slide-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Aligns the buttons to the left */
+    display: flex;
+    gap: 10px;
+  }
+
+  .slide-buttons button {
+    background-color: #ff6680;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+
+  .slide-buttons button:hover {
+    background-color: #ff99aa;
+  }
+
+  /* Styling for Navigation Links */
+  .nav-buttons {
+    position: relative; /* Ensures proper stacking */
+    margin-top: 80px; /* Creates separation from the slide buttons */
+  }
+
+  .nav-buttons a {
+    text-decoration: none;
+    color: #ff6680;
+    font-weight: bold;
+    border: 2px solid #ff99aa;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .nav-buttons a:hover {
+    background-color: #ff99aa;
+    color: #fff;
+  }
+
+  </style>
+</head>
+<body>
+
+<div class="slide-container">
+  <!-- Slide 1: Letter -->
+  <div class="slide active">
+    <h2>From the Heart</h2>
+    <p>Dearest Urielle,</p>
+    <p>Today, as you step into adulthood, our hearts are filled with joy and gratitude for the amazing person you are and the incredible journey ahead of you...</p>
+    <p>You are deeply loved, and anyone fortunate enough to cross your path will walk away with no regret—only the blessing of having met someone as extraordinary as you.</p>
+    <p>Our prayer for you is that the Most High keeps you great yet humble, that He opens your eyes to the beauty of reality while ensuring your dreams remain alive and achievable...</p>
+    <p>Happiest of birthdays to the prettiest queen. It’s an honor to be part of your journey, and today we celebrate you with joy, love, and excitement for the adventures that await. You are destined for greatness.</p>
+    <p>With all our love</p>
+  </div>
+
+  <!-- Slide 2: Goodbye and Thank You -->
+  <div class="slide">
+    <h1>Goodbye and Thank You!</h1>
+    <p>Happy 18th Birthday, Urielle!</p>
+    <p>Today has been a day to remember, filled with love, laughter, and joy. We hope this celebration brings you all the warmth and happiness you deserve on your special day.</p>
+    <p class="thanks">Thank you to everyone who joined in to celebrate and make this day unforgettable. Your presence and love have truly made Urielle’s birthday one to cherish.</p>
+    <p class="see-you">See you all next year on November 16th for another memorable celebration!</p>
+  </div>
+</div>
+
+  <!-- Slide Navigation Buttons -->
+  <div class="slide-buttons">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
+<div class="nav-buttons">
+  <a href="index.html">Back to Home</a>
+  <a href="hub.html">Back to Hub</a>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Initialize slides
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>
